@@ -1,0 +1,87 @@
+:root {
+    --azul-oscuro: #202A63;
+    --azul-claro: #75A3F3;
+    --amarillo: #F6B646;
+}
+
+body { font-family: 'Urbanist', sans-serif; margin: 0; background: #fff; }
+
+.contenedor { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+/* HEADER */
+.header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+.logo { height: 50px; }
+.contacto-link { color: var(--azul-oscuro); font-weight: bold; text-decoration: none; }
+
+/* HERO */
+h1 { color: var(--azul-oscuro); text-align: center; font-weight: 900; font-size: 2.8rem; margin: 20px 0; }
+
+.img-avion { 
+    width: 100%; 
+    max-height: 300px; /* EVITA QUE SEA GIGANTE */
+    object-fit: contain; 
+    margin-bottom: 40px;
+}
+
+.hero-flex { display: flex; gap: 50px; margin-bottom: 60px; }
+.col-izq, .col-der { flex: 1; }
+
+h2 { color: var(--azul-claro); font-weight: 800; }
+h3 { color: var(--azul-oscuro); text-transform: uppercase; margin-top: 20px; }
+.celeste { color: var(--azul-claro); font-weight: 800; }
+
+.btn-ayuda { 
+    background: var(--amarillo); border: none; padding: 15px 35px; 
+    border-radius: 20px; font-weight: bold; color: var(--azul-oscuro); 
+    cursor: pointer; margin-top: 20px; font-size: 1.1rem;
+}
+
+/* PASOS GRID (3 COLUMNAS) */
+.seccion-pasos { background: #F4F7FF; padding: 50px 30px; border-radius: 40px; }
+.titulo-pasos { text-align: center; color: var(--azul-oscuro); font-weight: 900; }
+.sub-pasos { text-align: center; color: var(--azul-claro); font-size: 1.8rem; margin-bottom: 10px; }
+.nota { text-align: center; font-size: 0.85rem; max-width: 800px; margin: 0 auto 40px; }
+
+.grid-pasos { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas como el PDF */
+    gap: 40px; 
+}
+
+.fila-iconos { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.num { height: 40px; }
+.ico { height: 35px; }
+.paso p { font-size: 0.9rem; line-height: 1.4; }
+
+/* APP FOOTER */
+.footer-app { display: flex; align-items: center; gap: 40px; padding: 60px 0; border-top: 1px solid #eee; margin-top: 40px; }
+.logo-f { height: 80px; }
+.google-play { height: 50px; cursor: pointer; margin-top: 10px; }
+
+/* MÓVIL */
+@media (max-width: 768px) {
+    .hero-flex, .grid-pasos, .footer-app { flex-direction: column; grid-template-columns: 1fr; }
+    h1 { font-size: 1.8rem; }
+}
+/* HEADER LOGIC */
+.hamburguesa { display: block; height: 30px; } /* Se ve en móvil */
+.menu-escritorio { display: none; }            /* Se oculta en móvil */
+
+@media (min-width: 768px) {
+    .hamburguesa { display: none; }            /* Se oculta en PC */
+    .menu-escritorio { display: block; }       /* Se ve en PC */
+    
+    .grid-pasos { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
+        gap: 40px; 
+    }
+}
+
+/* Tamaño de imagen del avión */
+.img-avion { 
+    width: 100%; 
+    max-height: 350px; 
+    object-fit: contain; 
+    margin: 20px 0;
+}
