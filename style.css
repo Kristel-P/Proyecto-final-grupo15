@@ -4,21 +4,28 @@
     --amarillo: #F6B646;
 }
 
-body { font-family: 'Urbanist', sans-serif; margin: 0; background: #fff; }
+body { 
+    font-family: 'Urbanist', sans-serif; 
+    margin: 0; 
+    background: #fff; 
+    overflow-x: hidden; /* Evita scroll horizontal innecesario */
+}
 
-.contenedor { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.contenedor { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
 .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
 .logo { height: 50px; }
 .contacto-link { color: var(--azul-oscuro); font-weight: bold; text-decoration: none; }
+.hamburguesa { height: 30px; display: block; } 
+.menu-escritorio { display: none; }
 
 h1 { color: var(--azul-oscuro); text-align: center; font-weight: 900; font-size: 2.8rem; margin: 20px 0; }
 
 .img-avion { 
     width: 100%; 
-    max-height: 300px; 
+    max-height: 350px; 
     object-fit: contain; 
-    margin-bottom: 40px;
+    margin: 20px 0;
 }
 
 .hero-flex { display: flex; gap: 50px; margin-bottom: 60px; }
@@ -34,9 +41,8 @@ h3 { color: var(--azul-oscuro); text-transform: uppercase; margin-top: 20px; }
     cursor: pointer; margin-top: 20px; font-size: 1.1rem;
 }
 
-
-.seccion-pasos { background: #F4F7FF; padding: 50px 30px; border-radius: 40px; }
-.titulo-pasos { text-align: center; color: var(--azul-oscuro); font-weight: 900; }
+.seccion-pasos { background: #F4F7FF; padding: 50px 30px; border-radius: 40px; margin-bottom: 40px; }
+.titulo-pasos { text-align: center; color: var(--azul-oscuro); font-weight: 900; margin-top: 0; }
 .sub-pasos { text-align: center; color: var(--azul-claro); font-size: 1.8rem; margin-bottom: 10px; }
 .nota { text-align: center; font-size: 0.85rem; max-width: 800px; margin: 0 auto 40px; }
 
@@ -49,305 +55,112 @@ h3 { color: var(--azul-oscuro); text-transform: uppercase; margin-top: 20px; }
 .fila-iconos { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .num { height: 40px; }
 .ico { height: 35px; }
-.paso p { font-size: 0.9rem; line-height: 1.4; }
 
-
-.footer-app { display: flex; align-items: center; gap: 40px; padding: 60px 0; border-top: 1px solid #eee; margin-top: 40px; }
-.logo-f { height: 80px; }
-.google-play { height: 50px; cursor: pointer; margin-top: 10px; }
-
-@media (max-width: 768px) {
-    .hero-flex, .grid-pasos, .footer-app { flex-direction: column; grid-template-columns: 1fr; }
-    h1 { font-size: 1.8rem; }
-}
-
-.hamburguesa { display: block; height: 30px; } 
-.menu-escritorio { display: none; }          
-
-@media (min-width: 768px) {
-    .hamburguesa { display: none; }           
-    .menu-escritorio { display: block; }      
-    
-    .grid-pasos { 
-        display: grid; 
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 40px; 
-    }
-}
-
-.img-avion { 
-    width: 100%; 
-    max-height: 350px; 
-    object-fit: contain; 
-    margin: 20px 0;
-}
-
-
-.seccion-app {
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-}
+.seccion-app { padding: 40px 0; display: flex; justify-content: center; }
 
 .app-contenedor-celeste {
     background-color: #E9F0FF; 
     border-radius: 50px;       
     display: flex;
     align-items: center;
-    max-width: 1100px;
+    width: 100%;
     padding: 50px;
     gap: 40px;
 }
 
-.app-col-izq, .app-col-der {
-    flex: 1;
-}
+.img-mockup { width: 100%; height: auto; max-width: 450px; }
+.titulo-app { color: var(--azul-oscuro); font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; }
 
-.titulo-app {
-    color: var(--azul-oscuro);
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.descripcion-app {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #333;
-}
-
-
-.app-actions {
-    display: flex;
-    align-items: center; 
-    gap: 20px;           
-    margin-top: 30px;
-}
+.app-actions { display: flex; align-items: center; gap: 20px; margin-top: 30px; }
 
 .btn-descarga-amarillo {
-    background-color: #F6B646; /* Color naranja/amarillo de Trecoi */
-    color: #202A63;           /* Texto azul oscuro */
-    border: none;
-    padding: 12px 30px;
-    border-radius: 10px;      /* Esto crea las esquinas redondeadas */
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1rem;
-    font-family: 'Urbanist', sans-serif;
-    transition: transform 0.2s ease;
-}
-
-.btn-descarga-amarillo:hover {
-    transform: scale(1.05);           
-}
-
-.img-google {
-    height: 48px;                      
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .app-actions {
-        flex-direction: column;       
-        gap: 15px;
-    }
-}
-
-.seccion-contacto {
-    background-color: var(--azul-oscuro); 
-    padding: 80px 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.contacto-card {
-    background: white;
-    max-width: 900px;
-    width: 100%;
-    padding: 50px;
-    border-radius: 30px; 
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.contacto-card h2 {
-    color: var(--azul-oscuro);
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-    font-weight: 900;
-}
-
-.sub-contacto {
-    color: var(--azul-claro);
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    text-transform: none; 
-}
-
-
-.form-trecoi {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-fila {
-    display: flex;
-    gap: 20px;
-}
-
-.form-fila input, 
-.form-trecoi textarea {
-    flex: 1;
-    padding: 15px;
-    border: 1px solid #d1d1d1;
-    border-radius: 8px;
-    font-family: 'Urbanist', sans-serif;
-    font-size: 1rem;
-}
-
-.form-trecoi textarea {
-    height: 150px;
-    resize: none;
-}
-
-.btn-enviar {
     background-color: var(--amarillo);
     color: var(--azul-oscuro);
     border: none;
-    padding: 15px 60px;
-    border-radius: 12px;
+    padding: 12px 30px;
+    border-radius: 10px;
     font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-    align-self: center; 
-    transition: background 0.3s ease;
-}
-
-.btn-enviar:hover {
-    filter: brightness(0.9);
-}
-
-
-@media (max-width: 768px) {
-    .form-fila {
-        flex-direction: column;
-    }
-    .contacto-card {
-        padding: 30px 20px;
-    }
-    .contacto-card h2 {
-        font-size: 1.3rem;
-    }
-}
-
-.footer-final {
-    background-color: var(--azul-oscuro);
-    color: white;
-    padding: 60px 20px;
-    position: relative;
-}
-
-.footer-columnas {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; 
-    gap: 30px;
-}
-.f-col {
-    flex: 1;
-    min-width: 180px;
-}
-.logo-footer-blanco, 
-.redes-sociales img {
-    height: 50px;
-    background: transparent !important; 
-    border: none !important;
-    filter: brightness(0) invert(1);   
-    display: block;
-}
-
-
-.redes-sociales img {
-    height: 25px; 
-    margin-right: 15px;
-}
-
-.f-col h4 {
-    color: var(--amarillo);
     font-size: 1rem;
-    margin-bottom: 20px;
-    text-transform: none;
-    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-.f-col ul {
+.img-google { height: 48px; width: auto; }
+
+.seccion-contacto { background-color: var(--azul-oscuro); padding: 80px 20px; display: flex; justify-content: center; }
+.contacto-card { background: white; max-width: 900px; width: 100%; padding: 50px; border-radius: 30px; text-align: center; }
+.contacto-card h2 { color: var(--azul-oscuro); font-size: 1.6rem; margin-bottom: 10px; font-weight: 900; }
+
+.form-trecoi { display: flex; flex-direction: column; gap: 20px; }
+.form-fila { display: flex; gap: 20px; }
+.form-fila input, .form-trecoi textarea { 
+    flex: 1; padding: 15px; border: 1px solid #d1d1d1; border-radius: 8px; font-size: 1rem; outline: none;
+}
+.btn-enviar { 
+    background-color: var(--amarillo); color: var(--azul-oscuro); border: none; padding: 15px 60px; 
+    border-radius: 12px; font-weight: bold; cursor: pointer; align-self: center; 
+}
+
+
+.footer-final { 
+    background-color: var(--azul-oscuro); 
+    color: white; 
+    padding: 60px 20px; }
+.footer-columnas { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+}
+
+.f-col h4 { 
+    color: var(--amarillo); 
+    margin-bottom: 20px; 
+    font-weight: 700; 
+}
+.f-col ul { 
     list-style: none;
     padding: 0;
-    margin: 0;
 }
-
-.f-col ul li {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    opacity: 0.8;
-    cursor: pointer;
-    color: white; 
+.f-col ul li { 
+    margin-bottom: 10px; 
+    opacity: 0.8; 
+    font-size: 0.9rem; 
 }
-
-.redes-sociales {
-    display: flex;
-    gap: 15px;
-}
-
-.redes-sociales img {
-    height: 25px;
-    filter: brightness(0) invert(1);
-}
-
-.email-footer {
-    font-size: 0.9rem;
-    opacity: 0.8;
+.logo-footer-blanco { height: 50px; filter: brightness(0) invert(1); background: transparent !important; }
+.redes-sociales { display: flex; gap: 15px; }
+.redes-sociales img { 
+    height: 25px; 
+    width: auto;
+    filter: brightness(0) invert(1); 
+    background: transparent !important; 
+    border: none !important;
 }
 
 .whatsapp-flotante {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: transform 0.3s;
+    position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+    background-color: #25d366; border-radius: 50%; display: flex;
+    justify-content: center; align-items: center; z-index: 1000;
 }
+.whatsapp-flotante img { 
+    width: 35px; 
+   }
 
-.whatsapp-flotante:hover {
-    transform: scale(1.1);
-}
-
-.whatsapp-flotante img {
-    width: 35px;
+@media (min-width: 768px) {
+    .hamburguesa { display: none; }
+    .menu-escritorio { display: block; }
 }
 
 @media (max-width: 768px) {
-    .footer-columnas {
-        flex-direction: column;
-        text-align: center;
+    h1 { font-size: 1.8rem; 
+       }
+    .hero-flex, .grid-pasos, .app-contenedor-celeste, .app-actions, .form-fila, .footer-columnas { 
+        flex-direction: column; 
     }
-    .redes-sociales {
-        justify-content: center;
-    }
-    .whatsapp-flotante {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-    }
+    .grid-pasos { grid-template-columns: 1fr; }
+    .app-contenedor-celeste { padding: 30px; text-align: center; }
+    .redes-sociales { justify-content: center; }
+    .footer-columnas { text-align: center; }
 }
-
